@@ -12,47 +12,32 @@ iface swp51
 auto swp52
 iface swp52
 
-# peerlink
-auto swp49
-iface swp49
-    post-up ip link set $IFACE promisc on     # Only required on VX
-
-auto swp50
-iface swp50
-    post-up ip link set $IFACE promisc on     # Only required on VX
-
-auto peerlink
-iface peerlink
-    bond-slaves swp49 swp50
-
-auto peerlink.4094
-iface peerlink.4094
-    address 169.254.255.2
-    netmask 255.255.255.0
-    clagd-priority 8192
-    clagd-peer-ip 169.254.255.1
-    clagd-backup-ip 10.0.0.11
-    clagd-sys-mac 44:38:39:ff:00:01
-
 # bridge to hosts
 auto swp1
 iface swp1
 
-auto server1
-iface server1
-    bond-slaves swp1
-    clag-id 1
-
-auto swp2
-iface swp2
-
-auto server2
-iface server2
-    bond-slaves swp2
-    clag-id 2
-
 auto br0
 iface br0
-    bridge-ports peerlink server1 server2
-    address 172.16.1.1/24
-    bridge-stp on
+    bridge-ports swp1
+    bridge-vlan-aware yes
+    bridge-vids 1 100 200
+    bridge-pvid 1
+
+auto vxlan10001
+iface vxlan10001
+    vxlan-id 10001
+    vxlan-local-tunnelip 10.0.0.12
+    bridge-access 1
+
+auto vxlan10100
+iface vxlan10100
+     vxlan-id 10100
+     vxlan-local-tunnelip 10.0.0.12
+     bridge-access 100
+
+auto vxlan10200
+iface vxlan10200
+     vxlan-id 10200
+     vxlan-local-tunnelip 10.0.0.12
+     bridge-access 200
+

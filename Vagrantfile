@@ -134,6 +134,11 @@ Vagrant.configure("2") do |config|
     # Shorten Boot Process - Applies to Ubuntu Only - remove \"Wait for Network\"
     device.vm.provision :shell , inline: "sed -i 's/sleep [0-9]*/sleep 1/' /etc/init/failsafe.conf 2>/dev/null || true"
 
+    #Copy over DHCP files and MGMT Network Files
+    device.vm.provision "file", source: "./helper_scripts/dhcpd.conf", destination: "~/dhcpd.conf"
+    device.vm.provision "file", source: "./helper_scripts/dhcpd.hosts", destination: "~/dhcpd.hosts"
+    device.vm.provision "file", source: "./helper_scripts/hosts", destination: "~/hosts"
+    device.vm.provision "file", source: "./helper_scripts/ansible_hostfile", destination: "~/ansible_hostfile"
     
     # Run the Config specified in the Node Attributes
     device.vm.provision :shell , privileged: false, :inline => 'echo "$(whoami)" > /tmp/normal_user'
@@ -959,7 +964,7 @@ end
     # Copy over configuration files
     device.vm.provision "file", source: "./config/spine02/interfaces", destination: "~/interfaces"
     device.vm.provision "file", source: "./config/spine02/daemons", destination: "~/daemons"
-    device.vm.provision "file", source: "./config/spine02/Quagga.conf", destination: "~/Quagga.conf
+    device.vm.provision "file", source: "./config/spine02/Quagga.conf", destination: "~/Quagga.conf"
     
     # Run the Config specified in the Node Attributes
     device.vm.provision :shell , privileged: false, :inline => 'echo "$(whoami)" > /tmp/normal_user'
@@ -1137,7 +1142,7 @@ end
     # Copy over configuration files
     device.vm.provision "file", source: "./config/spine01/interfaces", destination: "~/interfaces"
     device.vm.provision "file", source: "./config/spine01/daemons", destination: "~/daemons"
-    device.vm.provision "file", source: "./config/spine01/Quagga.conf", destination: "~/Quagga.conf
+    device.vm.provision "file", source: "./config/spine01/Quagga.conf", destination: "~/Quagga.conf"
     
     # Run the Config specified in the Node Attributes
     device.vm.provision :shell , privileged: false, :inline => 'echo "$(whoami)" > /tmp/normal_user'
@@ -1335,7 +1340,7 @@ end
     # Copy over configuration files
     device.vm.provision "file", source: "./config/leaf04/interfaces", destination: "~/interfaces"
     device.vm.provision "file", source: "./config/leaf04/daemons", destination: "~/daemons"
-    device.vm.provision "file", source: "./config/leaf04/Quagga.conf", destination: "~/Quagga.conf
+    device.vm.provision "file", source: "./config/leaf04/Quagga.conf", destination: "~/Quagga.conf"
     
     # Run the Config specified in the Node Attributes
     device.vm.provision :shell , privileged: false, :inline => 'echo "$(whoami)" > /tmp/normal_user'
@@ -1541,7 +1546,7 @@ end
     # Copy over configuration files
     device.vm.provision "file", source: "./config/leaf02/interfaces", destination: "~/interfaces"
     device.vm.provision "file", source: "./config/leaf02/daemons", destination: "~/daemons"
-    device.vm.provision "file", source: "./config/leaf02/Quagga.conf", destination: "~/Quagga.conf
+    device.vm.provision "file", source: "./config/leaf02/Quagga.conf", destination: "~/Quagga.conf"
     
     # Run the Config specified in the Node Attributes
     device.vm.provision :shell , privileged: false, :inline => 'echo "$(whoami)" > /tmp/normal_user'
@@ -1747,7 +1752,7 @@ end
     # Copy over configuration files
     device.vm.provision "file", source: "./config/leaf03/interfaces", destination: "~/interfaces"
     device.vm.provision "file", source: "./config/leaf03/daemons", destination: "~/daemons"
-    device.vm.provision "file", source: "./config/leaf03/Quagga.conf", destination: "~/Quagga.conf
+    device.vm.provision "file", source: "./config/leaf03/Quagga.conf", destination: "~/Quagga.conf"
     
     # Run the Config specified in the Node Attributes
     device.vm.provision :shell , privileged: false, :inline => 'echo "$(whoami)" > /tmp/normal_user'
@@ -2120,10 +2125,9 @@ end
   ##### DEFINE VM for server01 #####
   config.vm.define "server01" do |device|
     device.vm.hostname = "server01" 
-    device.vm.box = "yk0/ubuntu-xenial"
+    device.vm.box = "CumulusCommunity/cumulus-vx"
  
     device.vm.provider :libvirt do |v|
-      v.nic_model_type = 'e1000' 
       v.memory = 512
     end
     #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
@@ -2215,10 +2219,9 @@ end
   ##### DEFINE VM for server03 #####
   config.vm.define "server03" do |device|
     device.vm.hostname = "server03" 
-    device.vm.box = "yk0/ubuntu-xenial"
+    device.vm.box = "CumulusCommunity/cumulus-vx"
  
     device.vm.provider :libvirt do |v|
-      v.nic_model_type = 'e1000' 
       v.memory = 512
     end
     #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
@@ -2310,10 +2313,9 @@ end
   ##### DEFINE VM for server02 #####
   config.vm.define "server02" do |device|
     device.vm.hostname = "server02" 
-    device.vm.box = "yk0/ubuntu-xenial"
+    device.vm.box = "CumulusCommunity/cumulus-vx"
  
     device.vm.provider :libvirt do |v|
-      v.nic_model_type = 'e1000' 
       v.memory = 512
     end
     #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
@@ -2405,10 +2407,9 @@ end
   ##### DEFINE VM for server04 #####
   config.vm.define "server04" do |device|
     device.vm.hostname = "server04" 
-    device.vm.box = "yk0/ubuntu-xenial"
+    device.vm.box = "CumulusCommunity/cumulus-vx"
  
     device.vm.provider :libvirt do |v|
-      v.nic_model_type = 'e1000' 
       v.memory = 512
     end
     #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
