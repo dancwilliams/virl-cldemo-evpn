@@ -30,6 +30,7 @@ iface lo inet loopback
 # The primary network interface
 auto eth0
 iface eth0 inet dhcp
+
 EOF
 
 ## Convenience code. This is normally done in ZTP.
@@ -47,6 +48,11 @@ sed -i 's/eth0/eth1/g' /tmp/foo/grub/grub.cfg
 sed -i 's/eth0/eth1/g' /tmp/foo/onie/grub/grub-extra.cfg
 umount /tmp/foo
 
+cp /home/vagrant/interfaces /etc/network/interfaces
+cp /home/vagrant/daemons /etc/quagga/daemons
+cp /home/vagrant/Quagga.conf /etc/quagga/Quagga.conf
+
+ifreload -a
 
 ## Enabling Quagga
 sed -i 's/zebra=no/zebra=yes/g' /etc/quagga/daemons
