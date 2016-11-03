@@ -19,7 +19,7 @@ Quickstart: Run the demo
     ping 172.16.1.104
     
     
-![Topology](topology.png)
+![Topology](evpn.png)
     
 Requirements
 ----------------------
