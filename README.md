@@ -5,13 +5,7 @@ This Github repository contains the configuration files necessary for setting up
 The flatfiles in this repository will set up a BGP unnumbered routing fabric between the leafs and spines, and will trunks between switches and the servers in that rack.
 
 
-Requirements
-----------------------
-[Vagrant](https://www.vagrantup.com/) 
 
-and
-
-[VirtualBox](https://www.virtualbox.org/wiki/Downloads) or [KVM](http://www.linux-kvm.org/page/Downloads)
 
 Quickstart: Run the demo
 ------------------------
@@ -23,6 +17,17 @@ Quickstart: Run the demo
     sudo su - cumulus
     ssh server01
     ping 172.16.1.104
+    
+    
+![Topology](topology.png)
+    
+Requirements
+----------------------
+[Vagrant](https://www.vagrantup.com/) 
+
+and
+
+[VirtualBox](https://www.virtualbox.org/wiki/Downloads) or [KVM](http://www.linux-kvm.org/page/Downloads)
 
 Factory-reset a device
 ----------------------
@@ -32,6 +37,7 @@ Factory-reset a device
 Destroy the entire topology
 ---------------------------
     vagrant destroy -f
+
 
 ![Cumulus icon](http://cumulusnetworks.com/static/cumulus/img/logo_2014.png)
 
