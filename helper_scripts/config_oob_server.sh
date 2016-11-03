@@ -92,9 +92,8 @@ chmod 400 /home/cumulus/.ssh/id_rsa
 chmod 700 /home/cumulus/.ssh/id_rsa.pub
 chown cumulus:cumulus -R /home/cumulus/.ssh
 
-mkdir /home/vagrant/.ssh
 cp /home/cumulus/.ssh/id_rsa /home/vagrant/.ssh/id_rsa
-cp /home/vagrant/.ssh/id_rsa.pub /home/vagrant/.ssh/id_rsa.pub
+cp /home/cumulus/.ssh/id_rsa.pub /home/vagrant/.ssh/id_rsa.pub
 chown vagrant:vagrant -R /home/vagrant/.ssh
 
 
