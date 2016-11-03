@@ -4,15 +4,14 @@
 auto eth0
 iface eth0 inet dhcp
 
-auto uplink
-iface uplink 
-    bond-slaves swp1 swp2
+auto eth1
+iface eth1 
     address 172.16.1.103/24
 
-auto uplink.100
-iface uplink.100
+auto eth1.100
+iface eth1.100
     address 172.16.100.103/24
 
-auto uplink.200
-iface uplink.200
+auto eth1.200
+iface eth1.200
     address 172.16.200.103/24

@@ -18,7 +18,7 @@ iface swp1
 
 auto br0
 iface br0
-    bridge-ports swp1
+    bridge-ports swp2 vxlan10001 vxlan10100 vxlan10200
     bridge-vlan-aware yes
     bridge-vids 1 100 200
     bridge-pvid 1
