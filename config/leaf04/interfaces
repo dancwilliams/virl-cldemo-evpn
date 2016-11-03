@@ -12,7 +12,6 @@ iface swp51
 auto swp52
 iface swp52
 
-
 auto br0
 iface br0
     bridge-ports swp2 vxlan10001 vxlan10100 vxlan10200
