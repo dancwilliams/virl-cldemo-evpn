@@ -5,7 +5,7 @@ This Github repository contains the configuration files necessary for setting up
 The flatfiles in this repository will set up a BGP unnumbered routing fabric between the leafs and spines, and will trunks between switches and the servers in that rack.
 
 
-Requiresments
+Requirements
 ----------------------
 [Vagrant](https://www.vagrantup.com/) 
 
