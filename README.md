@@ -38,6 +38,13 @@ Destroy the entire topology
 ---------------------------
     vagrant destroy -f
 
+KVM Support
+---------------------------
+By default this Vagrantfile is setup for Virtualbox.  To use this Demo for KVM use the Vagrantfile-kvm
+
+    mv Vagrantfile-kvm Vagrantfile
+
+All other directions remain the same
 
 ![Cumulus icon](http://cumulusnetworks.com/static/cumulus/img/logo_2014.png)
 
