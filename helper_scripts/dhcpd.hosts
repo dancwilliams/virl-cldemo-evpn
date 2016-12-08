@@ -31,7 +31,7 @@ group {
  host server03 {
     # HW address for eth0
     hardware ethernet A0:00:00:00:00:33;
-    fixed-address 192.168.200.193;
+    fixed-address 192.168.200.103;
     option host-name "server03";
   }
 
