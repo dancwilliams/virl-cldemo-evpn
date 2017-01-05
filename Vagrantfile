@@ -153,7 +153,7 @@ end
   config.vm.define "oob-mgmt-switch" do |device|
     device.vm.hostname = "oob-mgmt-switch" 
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.1.1"
+    device.vm.box_version = "3.2.0"
     device.vm.provider "virtualbox" do |v|
       v.name = "1478207602_oob-mgmt-switch"
       v.memory = 256
@@ -331,7 +331,7 @@ end
   config.vm.define "exit02" do |device|
     device.vm.hostname = "exit02" 
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.1.1"
+    device.vm.box_version = "3.2.0"
     device.vm.provider "virtualbox" do |v|
       v.name = "1478207602_exit02"
       v.memory = 512
@@ -469,7 +469,7 @@ end
   config.vm.define "exit01" do |device|
     device.vm.hostname = "exit01" 
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.1.1"
+    device.vm.box_version = "3.2.0"
     device.vm.provider "virtualbox" do |v|
       v.name = "1478207602_exit01"
       v.memory = 512
@@ -607,7 +607,7 @@ end
   config.vm.define "spine02" do |device|
     device.vm.hostname = "spine02" 
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.1.1"
+    device.vm.box_version = "3.2.0"
     device.vm.provider "virtualbox" do |v|
       v.name = "1478207602_spine02"
       v.memory = 512
@@ -732,7 +732,7 @@ end
   config.vm.define "spine01" do |device|
     device.vm.hostname = "spine01" 
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.1.1"
+    device.vm.box_version = "3.2.0"
     device.vm.provider "virtualbox" do |v|
       v.name = "1478207602_spine01"
       v.memory = 512
@@ -858,7 +858,7 @@ end
   config.vm.define "leaf04" do |device|
     device.vm.hostname = "leaf04" 
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.1.1"
+    device.vm.box_version = "3.2.0"
     device.vm.provider "virtualbox" do |v|
       v.name = "1478207602_leaf04"
       v.memory = 512
@@ -999,7 +999,7 @@ end
   config.vm.define "leaf02" do |device|
     device.vm.hostname = "leaf02" 
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.1.1"
+    device.vm.box_version = "3.2.0"
     device.vm.provider "virtualbox" do |v|
       v.name = "1478207602_leaf02"
       v.memory = 512
@@ -1140,7 +1140,7 @@ end
   config.vm.define "leaf03" do |device|
     device.vm.hostname = "leaf03" 
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.1.1"
+    device.vm.box_version = "3.2.0"
     device.vm.provider "virtualbox" do |v|
       v.name = "1478207602_leaf03"
       v.memory = 512
@@ -1281,7 +1281,7 @@ end
   config.vm.define "leaf01" do |device|
     device.vm.hostname = "leaf01" 
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.1.1"
+    device.vm.box_version = "3.2.0"
     device.vm.provider "virtualbox" do |v|
       v.name = "1478207602_leaf01"
       v.memory = 512
@@ -1499,7 +1499,7 @@ end
   config.vm.define "server01" do |device|
     device.vm.hostname = "server01" 
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.1.1"
+    device.vm.box_version = "3.2.0"
     device.vm.provider "virtualbox" do |v|
       v.name = "1478207602_server01"
       v.memory = 512
@@ -1578,7 +1578,7 @@ end
   config.vm.define "server03" do |device|
     device.vm.hostname = "server03" 
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.1.1"
+    device.vm.box_version = "3.2.0"
     device.vm.provider "virtualbox" do |v|
       v.name = "1478207602_server03"
       v.memory = 512
@@ -1655,7 +1655,7 @@ end
   config.vm.define "server02" do |device|
     device.vm.hostname = "server02" 
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.1.1"
+    device.vm.box_version = "3.2.0"
     device.vm.provider "virtualbox" do |v|
       v.name = "1478207602_server02"
       v.memory = 512
@@ -1733,7 +1733,7 @@ end
   config.vm.define "server04" do |device|
     device.vm.hostname = "server04" 
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.1.1"
+    device.vm.box_version = "3.2.0"
     device.vm.provider "virtualbox" do |v|
       v.name = "1478207602_server04"
       v.memory = 512
@@ -1811,7 +1811,7 @@ end
   config.vm.define "internet" do |device|
     device.vm.hostname = "internet" 
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.1.1"
+    device.vm.box_version = "3.2.0"
     device.vm.provider "virtualbox" do |v|
       v.name = "1478207602_internet"
       v.memory = 256
