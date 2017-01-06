@@ -24,6 +24,7 @@ echo "    netmask 255.255.255.0" >> /etc/network/interfaces
 
 echo "cumulus ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10_cumulus
 
+sed -i '/cumulus/c\cumulus:$6$sL6mBTLX$DSiRA6w87n74HPpiyR/7igb7fvwTzo23oMdvNHoTSia4glKpurK5nM7by8zFTwUtjhkJNVS6F8cAN420cEeMa/:17172::::::' /etc/shadow
 
 ifup eth1
 sed "s/PasswordAuthentication no/PasswordAuthentication yes/" -i /etc/ssh/sshd_config
