@@ -8,26 +8,31 @@ echo "#################################"
 sudo su
 
 #Replace existing network interfaces file
+echo "  Adding lo config"
 echo -e "auto lo" > /etc/network/interfaces
 echo -e "iface lo inet loopback\n\n" >> /etc/network/interfaces
 echo -e  "source /etc/network/interfaces.d/*.cfg\n" >> /etc/network/interfaces
 
 #Add vagrant interface
+echo "  Adding eth0 config"
 echo -e "\n\nauto eth0" >> /etc/network/interfaces
 echo -e "iface eth0 inet dhcp\n\n" >> /etc/network/interfaces
 
 ####### Custom Stuff
+echo "  Adding eth1 config"
 echo "auto eth1" >> /etc/network/interfaces
 echo "iface eth1 inet static" >> /etc/network/interfaces
 echo "    address 192.168.200.254" >> /etc/network/interfaces
 echo "    netmask 255.255.255.0" >> /etc/network/interfaces
 
 echo "cumulus ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10_cumulus
+sed "s/PasswordAuthentication no/PasswordAuthentication yes/" -i /etc/ssh/sshd_config
 
+echo "  Adding cumulus plaintext password"
 sed -i '/cumulus/c\cumulus:$6$sL6mBTLX$DSiRA6w87n74HPpiyR/7igb7fvwTzo23oMdvNHoTSia4glKpurK5nM7by8zFTwUtjhkJNVS6F8cAN420cEeMa/:17172::::::' /etc/shadow
 
+echo "  ifuping eth1 and restarting SSH"
 ifup eth1
-sed "s/PasswordAuthentication no/PasswordAuthentication yes/" -i /etc/ssh/sshd_config
 service ssh restart
 
 echo " ### Overwriting DNS Server to 8.8.8.8 ###"
