@@ -41,7 +41,9 @@ echo " ### Updating APT Repository... ###"
 apt-get update -y
 
 echo " ### Installing Packages... ###"
-apt-get install -y htop isc-dhcp-server tree apache2 vlan git python-pip dnsmasq ifenslave apt-cacher-ng python-dev sshpass lldpd libssl-dev
+apt-get install -y htop isc-dhcp-server tree apache2 vlan git python-pip dnsmasq ifenslave apt-cacher-ng sshpass lldpd
+echo " ### Installing ansible... ###"
+apt-get install -y build-essential libssl-dev libffi-dev python-dev
 pip install pip --upgrade
 pip install setuptools --upgrade
 pip install ansible --upgrade
