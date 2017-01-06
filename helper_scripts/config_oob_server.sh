@@ -50,7 +50,7 @@ pip install ansible --upgrade
 
 echo " ### Moving Ansible Hostfile into place ###"
 mkdir -p /etc/ansible
-mv /home/$username/ansible_hostfile /etc/ansible/hosts
+mv /home/vagrant/ansible_hostfile /etc/ansible/hosts
 
 echo " ### Creating cumulus user ###"
 useradd -m cumulus
