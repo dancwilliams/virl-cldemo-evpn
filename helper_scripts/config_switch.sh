@@ -36,6 +36,9 @@ cp /home/vagrant/Quagga.conf /etc/quagga/Quagga.conf
 
 ifreload -a
 
+## Add proxy
+echo 'Acquire::http::Proxy "http://192.168.200.254:3142";' > /etc/apt/apt.conf.d/69cldemo
+
 ## Enabling Quagga
 sed -i 's/zebra=no/zebra=yes/g' /etc/quagga/daemons
 sed -i 's/bgpd=no/bgpd=yes/g' /etc/quagga/daemons
