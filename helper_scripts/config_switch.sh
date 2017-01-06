@@ -30,27 +30,40 @@ sed -i 's/eth0/eth1/g' /tmp/foo/grub/grub.cfg
 sed -i 's/eth0/eth1/g' /tmp/foo/onie/grub/grub-extra.cfg
 umount /tmp/foo
 
+echo "  copying interfaces"
 cp /home/vagrant/interfaces /etc/network/interfaces
+echo "  copying daemons"
 cp /home/vagrant/daemons /etc/quagga/daemons
+echo "  copying Quagga.conf"
 cp /home/vagrant/Quagga.conf /etc/quagga/Quagga.conf
 
-ifreload -a
 
 ## Add proxy
+echo "  adding proxy to oob-mgmt-server"
 echo 'Acquire::http::Proxy "http://192.168.200.254:3142";' > /etc/apt/apt.conf.d/69cldemo
 
+echo "  applying ifreload -a"
+ifreload -a
+
+
 ## Enabling Quagga
+echo "  enabling zebra"
 sed -i 's/zebra=no/zebra=yes/g' /etc/quagga/daemons
+echo "  copying bgp"
 sed -i 's/bgpd=no/bgpd=yes/g' /etc/quagga/daemons
 
 #Upgrading Quagga for EVPN
+echo "  adding EA packages"
 sed -i 's/#deb     http:\/\/repo3.cumulusnetworks.com\/repo CumulusLinux-3-early-access cumulus/deb     http:\/\/repo3.cumulusnetworks.com\/repo CumulusLinux-3-early-access cumulus/' /etc/apt/sources.list
 sed -i 's/#deb-src http:\/\/repo3.cumulusnetworks.com\/repo CumulusLinux-3-early-access cumulus/deb-src http:\/\/repo3.cumulusnetworks.com\/repo CumulusLinux-3-early-access cumulus/' /etc/apt/sources.list
 apt-get update
+echo "  installing Quagga"
 apt-get install cumulus-evpn
-apt-get upgrade -y --force-yes
+#apt-get upgrade -y --force-yes
 
+echo "  enabling Quagga"
 systemctl enable quagga.service
+echo "  starting Quagga"
 systemctl start quagga.service
 
 echo "#################################"
