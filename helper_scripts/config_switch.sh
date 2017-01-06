@@ -37,15 +37,6 @@ cp /home/vagrant/daemons /etc/quagga/daemons
 echo "  copying Quagga.conf"
 cp /home/vagrant/Quagga.conf /etc/quagga/Quagga.conf
 
-
-## Add proxy
-echo "  adding proxy to oob-mgmt-server"
-echo 'Acquire::http::Proxy "http://192.168.200.254:3142";' > /etc/apt/apt.conf.d/69cldemo
-
-echo "  applying ifreload -a"
-ifreload -a
-
-
 ## Enabling Quagga
 echo "  enabling zebra"
 sed -i 's/zebra=no/zebra=yes/g' /etc/quagga/daemons
@@ -59,12 +50,13 @@ sed -i 's/#deb-src http:\/\/repo3.cumulusnetworks.com\/repo CumulusLinux-3-early
 apt-get update
 echo "  installing Quagga"
 apt-get install cumulus-evpn
-#apt-get upgrade -y --force-yes
 
 echo "  enabling Quagga"
 systemctl enable quagga.service
-echo "  starting Quagga"
-systemctl start quagga.service
+
+## Add proxy
+echo "  adding proxy to oob-mgmt-server"
+echo 'Acquire::http::Proxy "http://192.168.200.254:3142";' > /etc/apt/apt.conf.d/69cldemo
 
 echo "#################################"
 echo "   Finished"
