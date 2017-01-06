@@ -39,8 +39,6 @@ ifreload -a
 ## Enabling Quagga
 sed -i 's/zebra=no/zebra=yes/g' /etc/quagga/daemons
 sed -i 's/bgpd=no/bgpd=yes/g' /etc/quagga/daemons
-systemctl enable quagga.service
-systemctl start quagga.service
 
 #Upgrading Quagga for EVPN
 sed -i 's/#deb     http:\/\/repo3.cumulusnetworks.com\/repo CumulusLinux-3-early-access cumulus/deb     http:\/\/repo3.cumulusnetworks.com\/repo CumulusLinux-3-early-access cumulus/' /etc/apt/sources.list
@@ -48,6 +46,9 @@ sed -i 's/#deb-src http:\/\/repo3.cumulusnetworks.com\/repo CumulusLinux-3-early
 apt-get update
 apt-get install cumulus-evpn
 apt-get upgrade -y --force-yes
+
+systemctl enable quagga.service
+systemctl start quagga.service
 
 echo "#################################"
 echo "   Finished"
