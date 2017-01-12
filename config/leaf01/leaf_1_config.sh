@@ -25,11 +25,14 @@ chown cumulus:cumulus -R /home/cumulus/.ssh
 echo "This is a fake license" > /etc/cumulus/.license.txt
 
 echo "  copying interfaces"
-wget https://raw.githubusercontent.com/dancwilliams/virl-cldemo-evpn/master/config/leaf01/interfaces >> /etc/network/interfaces
+wget https://raw.githubusercontent.com/dancwilliams/virl-cldemo-evpn/master/config/leaf01/interfaces
+cp interfaces /etc/network/interfaces
 echo "  copying daemons"
-wget https://raw.githubusercontent.com/dancwilliams/virl-cldemo-evpn/master/config/leaf01/daemons >> /etc/quagga/daemons
+wget https://raw.githubusercontent.com/dancwilliams/virl-cldemo-evpn/master/config/leaf01/daemons
+cp daemons /etc/quagga/daemons
 echo "  copying Quagga.conf"
-wget https://raw.githubusercontent.com/dancwilliams/virl-cldemo-evpn/master/config/leaf01/Quagga.conf >> /etc/quagga/Quagga.conf
+wget https://raw.githubusercontent.com/dancwilliams/virl-cldemo-evpn/master/config/leaf01/Quagga.conf
+cp Quagga.conf /etc/quagga/Quagga.conf
 
 ## Enabling Quagga
 echo "  enabling zebra"
