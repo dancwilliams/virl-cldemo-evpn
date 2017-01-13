@@ -21,7 +21,7 @@ Quickstart: Run the demo
     ping 172.16.1.104
     
     
-![Topology](evpn.png)
+![Topology](virl-cldemo-evpn.png)
     
 Requirements
 ----------------------
