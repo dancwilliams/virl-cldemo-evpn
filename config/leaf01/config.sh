@@ -51,8 +51,10 @@ echo "  enabling Quagga"
 systemctl enable quagga.service
 systemctl start quagga.service
 
+ifup lo
 ifup swp1
 ifup swp2
+ifup br0
 ifup swp3
 ifup vxlan10001
 ifup vxlan10100
