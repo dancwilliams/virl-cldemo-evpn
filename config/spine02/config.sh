@@ -54,6 +54,7 @@ systemctl start quagga.service
 ifup swp1
 ifup swp2
 ifup swp3
+ifup swp4
 
 echo "#################################"
 echo "   Finished"
