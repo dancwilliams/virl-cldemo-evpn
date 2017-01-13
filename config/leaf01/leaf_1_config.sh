@@ -6,7 +6,6 @@ exec &> /var/log/virllogfile.txt
 echo "#################################"
 echo "  Running Switch Post Config"
 echo "#################################"
-sudo su
 
 echo "  adding fake cl-acltool..."
 echo -e "#!/bin/bash\nexit 0" > /bin/cl-acltool
