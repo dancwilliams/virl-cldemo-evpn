@@ -1,11 +1,13 @@
 Demo EVPN on Cumulus Linux
 ========================
-This Github repository contains the configuration files necessary for setting up EVPN (Ethernet VPN) using Cumulus Linux and Quagga on the [Reference Topology](http://github.com/cumulusnetworks/cldemo-vagrant).  Only Server01->Server04, Leaf01->Leaf04 and Spine01->Spine02 are used.
+This project is based on the Cumulus Networks EVPN DEMO Located [HERE](https://github.com/CumulusNetworks/cldemo-evpn).  I have just adapted the configs to be rolled out into a VIRL topology to ease testing with other network devices.  A lot of the work was already done by Cumulus and it is great!  If there are any suggestions to make this better let me know!
+
+This Github repository contains the configuration files necessary for setting up EVPN (Ethernet VPN) using Cumulus Linux and Quagga on the [Reference Topology](https://github.com/dancwilliams/virl-cldemo-evpn).  Only Server01->Server04, Leaf01->Leaf04 and Spine01->Spine02 are used.
 
 The flatfiles in this repository will set up a BGP unnumbered routing fabric between the leafs and spines, and will trunks between switches and the servers in that rack.
 
-
-
+Setting up CumulusVX to run in Cisco VIRL
+-----------------------------------------
 
 Quickstart: Run the demo
 ------------------------
