@@ -45,7 +45,7 @@ sed -i 's/#deb     http:\/\/repo3.cumulusnetworks.com\/repo CumulusLinux-3-early
 sed -i 's/#deb-src http:\/\/repo3.cumulusnetworks.com\/repo CumulusLinux-3-early-access cumulus/deb-src http:\/\/repo3.cumulusnetworks.com\/repo CumulusLinux-3-early-access cumulus/' /etc/apt/sources.list
 apt-get update
 echo "  installing Quagga"
-apt-get install cumulus-evpn
+apt-get install cumulus-evpn 2> /dev/null
 
 echo "  enabling Quagga"
 systemctl enable quagga.service
