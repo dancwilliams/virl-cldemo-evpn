@@ -53,4 +53,4 @@ systemctl enable quagga.service
 echo "#################################"
 echo "   Finished"
 echo "#################################"
-ex
+exit 0
