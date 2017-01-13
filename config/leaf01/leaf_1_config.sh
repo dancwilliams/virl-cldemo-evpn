@@ -50,6 +50,10 @@ apt-get install cumulus-evpn
 echo "  enabling Quagga"
 systemctl enable quagga.service
 
+ifup swp1
+ifup swp2
+ifup swp3
+
 echo "#################################"
 echo "   Finished"
 echo "#################################"
