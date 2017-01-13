@@ -6,15 +6,19 @@ auto eth0
 iface eth0 inet dhcp
 
 # uplinks
-auto swp51
-iface swp51
+auto swp1
+iface swp1
 
-auto swp52
-iface swp52
+auto swp2
+iface swp2
+
+# bridge to hosts
+auto swp3
+iface swp3
 
 auto br0
 iface br0
-    bridge-ports swp1 vxlan10001 vxlan10100 vxlan10200
+    bridge-ports swp3 vxlan10001 vxlan10100 vxlan10200
     bridge-vlan-aware yes
     bridge-vids 1 100 200
     bridge-pvid 1
