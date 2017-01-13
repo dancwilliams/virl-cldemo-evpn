@@ -15,7 +15,6 @@ iface swp2
 # bridge to hosts
 auto swp3
 iface swp3
-    bridge-access 100
 
 auto br0
 iface br0
