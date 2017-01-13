@@ -54,6 +54,9 @@ systemctl start quagga.service
 ifup swp1
 ifup swp2
 ifup swp3
+ifup vxlan10001
+ifup vxlan10100
+ifup vxlan10200
 
 echo "#################################"
 echo "   Finished"
