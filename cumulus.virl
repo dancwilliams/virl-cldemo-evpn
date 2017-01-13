@@ -53,7 +53,7 @@ write_files:&#xD;
         <interface id="2" name="swp3"/>
         <interface id="3" name="swp4"/>
     </node>
-    <node name="Leaf-1" type="SIMPLE" subtype="CumulusVX" location="88,160" vmImage="CumulusVX320 [aedc5f5d-6423-430f-b7b3-2170859eab65]">
+    <node name="Leaf-1" type="SIMPLE" subtype="CumulusVX" location="61,193" vmImage="CumulusVX320 [aedc5f5d-6423-430f-b7b3-2170859eab65]">
         <extensions>
             <entry key="static_ip" type="String">172.23.1.34</entry>
             <entry key="config" type="String">bootcmd:&#xD;
@@ -78,7 +78,7 @@ write_files:&#xD;
         <interface id="2" name="swp3" ipv4="10.0.0.9" netPrefixLenV4="30"/>
         <interface id="3" name="swp4" ipv4="10.0.0.17" netPrefixLenV4="30"/>
     </node>
-    <node name="Leaf-3" type="SIMPLE" subtype="CumulusVX" location="379,160" vmImage="CumulusVX320 [aedc5f5d-6423-430f-b7b3-2170859eab65]">
+    <node name="Leaf-3" type="SIMPLE" subtype="CumulusVX" location="379,193" vmImage="CumulusVX320 [aedc5f5d-6423-430f-b7b3-2170859eab65]">
         <extensions>
             <entry key="static_ip" type="String">172.23.1.36</entry>
             <entry key="config" type="String">bootcmd:&#xD;
@@ -103,7 +103,7 @@ write_files:&#xD;
         <interface id="2" name="swp3"/>
         <interface id="3" name="swp4"/>
     </node>
-    <node name="Leaf-2" type="SIMPLE" subtype="CumulusVX" location="227,160" vmImage="CumulusVX320 [aedc5f5d-6423-430f-b7b3-2170859eab65]">
+    <node name="Leaf-2" type="SIMPLE" subtype="CumulusVX" location="225,193" vmImage="CumulusVX320 [aedc5f5d-6423-430f-b7b3-2170859eab65]">
         <extensions>
             <entry key="static_ip" type="String">172.23.1.35</entry>
             <entry key="config" type="String">bootcmd:&#xD;
@@ -128,7 +128,7 @@ write_files:&#xD;
         <interface id="2" name="swp3"/>
         <interface id="3" name="swp4"/>
     </node>
-    <node name="server-1" type="SIMPLE" subtype="server" location="88,263">
+    <node name="server-1" type="SIMPLE" subtype="server" location="61,296">
         <extensions>
             <entry key="static_ip" type="String">172.23.1.37</entry>
             <entry key="Auto-generate config" type="Boolean">false</entry>
@@ -197,7 +197,7 @@ write_files:&#xD;
         </extensions>
         <interface id="0" name="eth1" ipv4="10.0.0.10" netPrefixLenV4="30"/>
     </node>
-    <node name="server-2" type="SIMPLE" subtype="server" location="228,263">
+    <node name="server-2" type="SIMPLE" subtype="server" location="226,296">
         <extensions>
             <entry key="static_ip" type="String">172.23.1.39</entry>
             <entry key="Auto-generate config" type="Boolean">false</entry>
@@ -266,7 +266,7 @@ write_files:&#xD;
         </extensions>
         <interface id="0" name="eth1" ipv4="10.0.0.38" netPrefixLenV4="30"/>
     </node>
-    <node name="server-3" type="SIMPLE" subtype="server" location="379,263">
+    <node name="server-3" type="SIMPLE" subtype="server" location="379,296">
         <extensions>
             <entry key="static_ip" type="String">172.23.1.41</entry>
             <entry key="Auto-generate config" type="Boolean">false</entry>
@@ -335,7 +335,7 @@ write_files:&#xD;
         </extensions>
         <interface id="0" name="eth1" ipv4="10.0.0.46" netPrefixLenV4="30"/>
     </node>
-    <node name="Leaf-4" type="SIMPLE" subtype="CumulusVX" location="524,160" vmImage="CumulusVX320 [aedc5f5d-6423-430f-b7b3-2170859eab65]">
+    <node name="Leaf-4" type="SIMPLE" subtype="CumulusVX" location="533,193" vmImage="CumulusVX320 [aedc5f5d-6423-430f-b7b3-2170859eab65]">
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">bootcmd:&#xD;
@@ -358,7 +358,7 @@ write_files:&#xD;
         <interface id="1" name="swp2"/>
         <interface id="2" name="swp3"/>
     </node>
-    <node name="server-4" type="SIMPLE" subtype="server" location="525,263">
+    <node name="server-4" type="SIMPLE" subtype="server" location="534,296">
         <extensions>
             <entry key="config" type="String">#cloud-config&#xD;
 bootcmd:&#xD;
