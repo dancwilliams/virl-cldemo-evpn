@@ -6,7 +6,6 @@
     <node name="Spine-1" type="SIMPLE" subtype="CumulusVX" location="235,57" vmImage="CumulusVX320 [aedc5f5d-6423-430f-b7b3-2170859eab65]">
         <extensions>
             <entry key="static_ip" type="String">172.23.1.32</entry>
-            <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">bootcmd:&#xD;
 - ln -s -t /etc/rc.d /etc/rc.local&#xD;
 manage_etc_hosts: true&#xD;
@@ -22,15 +21,16 @@ write_files:&#xD;
     chmod +x config.sh &gt;/dev/null 2&gt;&gt;/var/log/virllogfile&#xD;
     ./config.sh&#xD;
     exit 0</entry>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
         </extensions>
         <interface id="0" name="swp1"/>
         <interface id="1" name="swp2"/>
         <interface id="2" name="swp3"/>
+        <interface id="3" name="swp4"/>
     </node>
     <node name="Spine-2" type="SIMPLE" subtype="CumulusVX" location="378,57" vmImage="CumulusVX320 [aedc5f5d-6423-430f-b7b3-2170859eab65]">
         <extensions>
             <entry key="static_ip" type="String">172.23.1.33</entry>
-            <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">bootcmd:&#xD;
 - ln -s -t /etc/rc.d /etc/rc.local&#xD;
 manage_etc_hosts: true&#xD;
@@ -46,15 +46,16 @@ write_files:&#xD;
     chmod +x config.sh &gt;/dev/null 2&gt;&gt;/var/log/virllogfile&#xD;
     ./config.sh&#xD;
     exit 0</entry>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
         </extensions>
         <interface id="0" name="swp1"/>
         <interface id="1" name="swp2"/>
         <interface id="2" name="swp3"/>
+        <interface id="3" name="swp4"/>
     </node>
-    <node name="Leaf-1" type="SIMPLE" subtype="CumulusVX" location="171,166" vmImage="CumulusVX320 [aedc5f5d-6423-430f-b7b3-2170859eab65]">
+    <node name="Leaf-1" type="SIMPLE" subtype="CumulusVX" location="88,160" vmImage="CumulusVX320 [aedc5f5d-6423-430f-b7b3-2170859eab65]">
         <extensions>
             <entry key="static_ip" type="String">172.23.1.34</entry>
-            <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">bootcmd:&#xD;
 - ln -s -t /etc/rc.d /etc/rc.local&#xD;
 manage_etc_hosts: true&#xD;
@@ -70,16 +71,16 @@ write_files:&#xD;
     chmod +x config.sh &gt;/dev/null 2&gt;&gt;/var/log/virllogfile&#xD;
     ./config.sh&#xD;
     exit 0</entry>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
         </extensions>
         <interface id="0" name="swp1" ipv4="10.0.0.5" netPrefixLenV4="30"/>
         <interface id="1" name="swp2" ipv4="10.0.0.13" netPrefixLenV4="30"/>
         <interface id="2" name="swp3" ipv4="10.0.0.9" netPrefixLenV4="30"/>
         <interface id="3" name="swp4" ipv4="10.0.0.17" netPrefixLenV4="30"/>
     </node>
-    <node name="Leaf-3" type="SIMPLE" subtype="CumulusVX" location="462,166" vmImage="CumulusVX320 [aedc5f5d-6423-430f-b7b3-2170859eab65]">
+    <node name="Leaf-3" type="SIMPLE" subtype="CumulusVX" location="379,160" vmImage="CumulusVX320 [aedc5f5d-6423-430f-b7b3-2170859eab65]">
         <extensions>
             <entry key="static_ip" type="String">172.23.1.36</entry>
-            <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">bootcmd:&#xD;
 - ln -s -t /etc/rc.d /etc/rc.local&#xD;
 manage_etc_hosts: true&#xD;
@@ -95,16 +96,16 @@ write_files:&#xD;
     chmod +x config.sh &gt;/dev/null 2&gt;&gt;/var/log/virllogfile&#xD;
     ./config.sh&#xD;
     exit 0</entry>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
         </extensions>
         <interface id="0" name="swp1"/>
         <interface id="1" name="swp2"/>
         <interface id="2" name="swp3"/>
         <interface id="3" name="swp4"/>
     </node>
-    <node name="Leaf-2" type="SIMPLE" subtype="CumulusVX" location="310,166" vmImage="CumulusVX320 [aedc5f5d-6423-430f-b7b3-2170859eab65]">
+    <node name="Leaf-2" type="SIMPLE" subtype="CumulusVX" location="227,160" vmImage="CumulusVX320 [aedc5f5d-6423-430f-b7b3-2170859eab65]">
         <extensions>
             <entry key="static_ip" type="String">172.23.1.35</entry>
-            <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">bootcmd:&#xD;
 - ln -s -t /etc/rc.d /etc/rc.local&#xD;
 manage_etc_hosts: true&#xD;
@@ -120,13 +121,14 @@ write_files:&#xD;
     chmod +x config.sh &gt;/dev/null 2&gt;&gt;/var/log/virllogfile&#xD;
     ./config.sh&#xD;
     exit 0</entry>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
         </extensions>
         <interface id="0" name="swp1"/>
         <interface id="1" name="swp2"/>
         <interface id="2" name="swp3"/>
         <interface id="3" name="swp4"/>
     </node>
-    <node name="server-1" type="SIMPLE" subtype="server" location="171,269">
+    <node name="server-1" type="SIMPLE" subtype="server" location="88,263">
         <extensions>
             <entry key="static_ip" type="String">172.23.1.37</entry>
             <entry key="Auto-generate config" type="Boolean">false</entry>
@@ -189,7 +191,7 @@ write_files:&#xD;
         </extensions>
         <interface id="0" name="eth1" ipv4="10.0.0.10" netPrefixLenV4="30"/>
     </node>
-    <node name="server-2" type="SIMPLE" subtype="server" location="311,269">
+    <node name="server-2" type="SIMPLE" subtype="server" location="228,263">
         <extensions>
             <entry key="static_ip" type="String">172.23.1.39</entry>
             <entry key="Auto-generate config" type="Boolean">false</entry>
@@ -252,7 +254,7 @@ write_files:&#xD;
         </extensions>
         <interface id="0" name="eth1" ipv4="10.0.0.38" netPrefixLenV4="30"/>
     </node>
-    <node name="server-3" type="SIMPLE" subtype="server" location="462,269">
+    <node name="server-3" type="SIMPLE" subtype="server" location="379,263">
         <extensions>
             <entry key="static_ip" type="String">172.23.1.41</entry>
             <entry key="Auto-generate config" type="Boolean">false</entry>
@@ -315,6 +317,90 @@ write_files:&#xD;
         </extensions>
         <interface id="0" name="eth1" ipv4="10.0.0.46" netPrefixLenV4="30"/>
     </node>
+    <node name="Leaf-4" type="SIMPLE" subtype="CumulusVX" location="524,160" vmImage="CumulusVX320 [aedc5f5d-6423-430f-b7b3-2170859eab65]">
+        <extensions>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">bootcmd:&#xD;
+- ln -s -t /etc/rc.d /etc/rc.local&#xD;
+manage_etc_hosts: true&#xD;
+write_files:&#xD;
+ - path: /etc/rc.local&#xD;
+  owner: root:root&#xD;
+  permissions: '0755'&#xD;
+  content: |-&#xD;
+    #!/bin/sh&#xD;
+    ifup eth0 &gt;/dev/null 2&gt;&gt;/var/log/virllogfile&#xD;
+    dhclient -v eth0 &gt;/dev/null 2&gt;&gt;/var/log/virllogfile&#xD;
+    wget https://raw.githubusercontent.com/dancwilliams/virl-cldemo-evpn/master/config/leaf04/config.sh &gt;/dev/null 2&gt;&gt;/var/log/virllogfile&#xD;
+    chmod +x config.sh &gt;/dev/null 2&gt;&gt;/var/log/virllogfile&#xD;
+    ./config.sh&#xD;
+    exit 0</entry>
+        </extensions>
+        <interface id="0" name="swp1"/>
+        <interface id="1" name="swp2"/>
+        <interface id="2" name="swp3"/>
+    </node>
+    <node name="server-4" type="SIMPLE" subtype="server" location="525,263">
+        <extensions>
+            <entry key="config" type="String">#cloud-config&#xD;
+bootcmd:&#xD;
+- ln -s -t /etc/rc.d /etc/rc.local&#xD;
+hostname: server-4&#xD;
+manage_etc_hosts: true&#xD;
+runcmd:&#xD;
+- start ttyS0&#xD;
+- systemctl start getty@ttyS0.service&#xD;
+- systemctl start rc-local&#xD;
+- sed -i '/^\s*PasswordAuthentication\s\+no/d' /etc/ssh/sshd_config&#xD;
+- echo "UseDNS no" &gt;&gt; /etc/ssh/sshd_config&#xD;
+- service ssh restart&#xD;
+- service sshd restart&#xD;
+users:&#xD;
+- default&#xD;
+- gecos: User configured by VIRL Configuration Engine 0.23.9&#xD;
+  lock-passwd: false&#xD;
+  name: cisco&#xD;
+  plain-text-passwd: cisco&#xD;
+  shell: /bin/bash&#xD;
+  ssh-authorized-keys:&#xD;
+  - VIRL-USER-SSH-PUBLIC-KEY&#xD;
+  sudo: ALL=(ALL) ALL&#xD;
+write_files:&#xD;
+- path: /etc/init/ttyS0.conf&#xD;
+  owner: root:root&#xD;
+  content: |&#xD;
+    # ttyS0 - getty&#xD;
+    # This service maintains a getty on ttyS0 from the point the system is&#xD;
+    # started until it is shut down again.&#xD;
+    start on stopped rc or RUNLEVEL=[12345]&#xD;
+    stop on runlevel [!12345]&#xD;
+    respawn&#xD;
+    exec /sbin/getty -L 115200 ttyS0 vt102&#xD;
+  permissions: '0644'&#xD;
+- path: /etc/systemd/system/dhclient@.service&#xD;
+  content: |&#xD;
+    [Unit]&#xD;
+    Description=Run dhclient on %i interface&#xD;
+    After=network.target&#xD;
+    [Service]&#xD;
+    Type=oneshot&#xD;
+    ExecStart=/sbin/dhclient %i -pf /var/run/dhclient.%i.pid -lf /var/lib/dhclient/dhclient.%i.lease&#xD;
+    RemainAfterExit=yes&#xD;
+  owner: root:root&#xD;
+  permissions: '0644'&#xD;
+- path: /etc/rc.local&#xD;
+  owner: root:root&#xD;
+  permissions: '0755'&#xD;
+  content: |-&#xD;
+    #!/bin/sh&#xD;
+    ifconfig eth1 up 172.16.1.104 netmask 255.255.255.0&#xD;
+    ifconfig eth1.100 up 172.16.100.104 netmask 255.255.255.0&#xD;
+    ifconfig eth1.200 up 172.16.200.104 netmask 255.255.255.0&#xD;
+    exit 0&#xD;
+</entry>
+        </extensions>
+        <interface id="0" name="eth1"/>
+    </node>
     <annotations/>
     <connection dst="/virl:topology/virl:node[1]/virl:interface[1]" src="/virl:topology/virl:node[3]/virl:interface[1]"/>
     <connection dst="/virl:topology/virl:node[5]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[2]"/>
@@ -325,4 +411,7 @@ write_files:&#xD;
     <connection dst="/virl:topology/virl:node[6]/virl:interface[1]" src="/virl:topology/virl:node[3]/virl:interface[3]"/>
     <connection dst="/virl:topology/virl:node[7]/virl:interface[1]" src="/virl:topology/virl:node[5]/virl:interface[3]"/>
     <connection dst="/virl:topology/virl:node[8]/virl:interface[1]" src="/virl:topology/virl:node[4]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[9]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[4]"/>
+    <connection dst="/virl:topology/virl:node[9]/virl:interface[2]" src="/virl:topology/virl:node[2]/virl:interface[4]"/>
+    <connection dst="/virl:topology/virl:node[10]/virl:interface[1]" src="/virl:topology/virl:node[9]/virl:interface[3]"/>
 </topology>
